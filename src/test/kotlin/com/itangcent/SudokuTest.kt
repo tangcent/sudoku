@@ -7,15 +7,15 @@ object SudokuTest {
     @JvmStatic
     fun main(args: Array<String>) {
         val elements = SudokuUtils.string2Sudoku(
-                "400000010" +
-                        "032000700" +
-                        "000003904" +
-                        "607052090" +
-                        "000070000" +
-                        "040310805" +
-                        "305800000" +
-                        "008000130" +
-                        "020000006")
+                "700005010" +
+                        "000070006" +
+                        "008000430" +
+                        "000000064" +
+                        "002839500" +
+                        "510000000" +
+                        "064000100" +
+                        "300080000" +
+                        "020400009")
         print("new Sudoku:")
         SudokuUtils.print(elements)
         SudokuUtils.enableLog(true)

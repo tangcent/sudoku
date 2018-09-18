@@ -12,22 +12,23 @@ object SudokuFileTest {
     @JvmStatic
     fun main(args: Array<String>) {
         BufferedReader(InputStreamReader(
-                SudokuFileTest::class.java.getResourceAsStream("sudoku.txt")
+                SudokuFileTest::class.java.classLoader.getResourceAsStream("sudoku.txt")
         )).use { reader ->
             var sb = StringBuilder()
             var cnt = 0
             var line: String? = reader.readLine()
             while (line != null) {
-                line = line.trim { it <= ' ' }
-                if (line.isEmpty() || line.startsWith("#"))
+                val trimedLine = line.trim { it <= ' ' }
+                line = reader.readLine()
+                if (trimedLine.isEmpty() || trimedLine.startsWith("#")) {
                     continue
-                sb.append(line.trim { it <= ' ' })
+                }
+                sb.append(trimedLine)
                 if (++cnt == 9) {
                     doSudoku(sb.toString())
                     cnt = 0
                     sb = StringBuilder()
                 }
-                line = reader.readLine()
             }
         }
     }
