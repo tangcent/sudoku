@@ -39,8 +39,9 @@ abstract class PartitionRule : SudokuRule {
                     }
                     val value = Value(j + 1, SudokuUtils.index2XY(optionsFlags[j]))
                     sudokuData.sure(value)
-                    SudokuUtils.printMsg("\n" + javaClass.simpleName + " sure:" + value.toString()
-                            + "\noptionsFlags:" + Arrays.toString(optionsFlags))
+                    SudokuUtils.printMsg("""
+${javaClass.simpleName} sure:${value.toString()}
+optionsFlags:${Arrays.toString(optionsFlags)}""")
                 }
             }
         }
