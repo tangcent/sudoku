@@ -5,7 +5,7 @@
 ## Code
 ```java
         val elements = SudokuUtils.string2Sudoku(
-                "700005010" +
+                        "700005010" +
                         "000070006" +
                         "008000430" +
                         "000000064" +
